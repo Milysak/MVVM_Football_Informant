@@ -122,6 +122,7 @@
     <Compile Include="DAL\Repositories\ClubsRepository.cs" />
     <Compile Include="DAL\Repositories\FederationsRepository.cs" />
     <Compile Include="DAL\Repositories\LeaguesRepository.cs" />
+    <Compile Include="DAL\Repositories\RankingsRepository.cs" />
     <Compile Include="DAL\Repositories\StadiumsRepository.cs" />
     <Compile Include="DAL\Repositories\WorkersRepository.cs" />
     <Compile Include="Model\Model.cs" />

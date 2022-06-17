@@ -23,6 +23,7 @@ namespace MVVM_Football_Informant.ViewModel
 
         private string typeOfRanking = null;
         private string targetOfRanking = null;
+        private string whereType = null;
 
         private List<string> rankingComboboxContent = new List<string>();
         private List<string> typeComboboxContent = new List<string>();
@@ -36,6 +37,7 @@ namespace MVVM_Football_Informant.ViewModel
         private bool clubComboboxIsEnable = false;
 
         private Visibility leaguesComboboxVisibility = Visibility.Hidden;
+        private Visibility federationComboboxVisibility = Visibility.Hidden;
 
         private Federation actualFederation = null;
         private League actualLeague = null;
@@ -63,7 +65,7 @@ namespace MVVM_Football_Informant.ViewModel
 
             typeToClubs.Add("Trofea");
             typeToClubs.Add("Wartość");
-            typeToClubs.Add("Najstarszy");
+            typeToClubs.Add("Rok utworzenia");
 
             typeToLeagues.Add("Najlepsza");
 
@@ -118,7 +120,23 @@ namespace MVVM_Football_Informant.ViewModel
             get { return typeOfRanking; }
             set
             {
-                typeOfRanking = value;
+                if (value != null)
+                {
+                    if (value.Equals("Trofea"))
+                        typeOfRanking = "trophiesNumber";
+                    else if (value.Equals("Wartość"))
+                        typeOfRanking = "teamValue";
+                    else if (value.Equals("Rok utworzenia"))
+                        typeOfRanking = "formYear";
+                    else if (value.Equals("Najlepsza"))
+                        typeOfRanking = "rankingPosition";
+                    else if (value.Equals("Pojemność"))
+                        typeOfRanking = "capacity";
+                    else if (value.Equals("Najstarszy"))
+                        typeOfRanking = "openDate";
+                }
+                else typeOfRanking = null;
+
                 onPropertyChanged(nameof(TypeOfRanking));
             }
         }
@@ -128,7 +146,18 @@ namespace MVVM_Football_Informant.ViewModel
             get { return targetOfRanking; }
             set
             {
-                targetOfRanking = value;
+                //MessageBox.Show(value);
+                if (value != null)
+                {
+                    if (value.Equals(rankingComboboxContent[0]))
+                        targetOfRanking = "leagues";
+                    else if (value.Equals(rankingComboboxContent[1]))
+                        targetOfRanking = "clubs";
+                    else if (value.Equals(rankingComboboxContent[2]))
+                        targetOfRanking = "stadiums";
+                }
+                else targetOfRanking = null;
+
                 onPropertyChanged(nameof(TargetOfRanking));
             }
         }
@@ -170,6 +199,16 @@ namespace MVVM_Football_Informant.ViewModel
             {
                 leaguesComboboxVisibility = value;
                 onPropertyChanged(nameof(LeaguesComboboxVisibility));
+            }
+        }
+        
+        public Visibility FederationComboboxVisibility
+        {
+            get { return federationComboboxVisibility; }
+            set
+            {
+                federationComboboxVisibility = value;
+                onPropertyChanged(nameof(FederationComboboxVisibility));
             }
         }
 
@@ -249,69 +288,78 @@ namespace MVVM_Football_Informant.ViewModel
             return list;
         }
 
-        private List<string> reflashRanking()
+        private List<string> rankingElements()
         {
-            List<string> strings = new List<string>();
+            var rankingElements = new List<string>();
+            var elem = new List<dynamic>();
+
+            //MessageBox.Show(TargetOfRanking + " " + TypeOfRanking);
 
             if (TargetOfRanking != null && TypeOfRanking != null)
+                elem = model.DownloadSortedRanking(TargetOfRanking, TypeOfRanking, whereType);
+            else return null;
+
+            if (elem.Count > 0)
             {
-                if (TargetOfRanking.Equals(rankingComboboxContent[0])) // Ligi
+                //MessageBox.Show(elem[0].GetType().ToString());
+                if (elem[0].GetType().Equals(typeof(League)))
                 {
-                    strings = leaguesRanking();
+                    var list = new List<League>();
+                    foreach (var league in elem)
+                        list.Add(league);
+
+                    var i = 0;
+                    foreach (var league in list)
+                    {
+                        i++;
+                        rankingElements.Add(i + ". " + league.Name + " [" + league.PositionInRanking + "]");
+                    }
                 }
-                else if (TargetOfRanking.Equals(rankingComboboxContent[1])) // Kluby
+                else if (elem[0].GetType().Equals(typeof(Club)))
                 {
-                    strings = clubsRanking();
+                    var list = new List<Club>();
+                    foreach (var club in elem)
+                        list.Add(club);
+
+                    var i = 0;
+                    foreach (var club in list)
+                    {
+                        string data = "---";
+
+                        if (TypeOfRanking.Equals("trophiesNumber"))
+                            data = club.NumberOfTrophies.ToString();
+                        else if (TypeOfRanking.Equals("teamValue"))
+                            data = club.ValueOfTeam.ToString() + " mln €";
+                        else if (TypeOfRanking.Equals("formYear"))
+                            data = club.YearOfForm.ToString() + "r.";
+
+                            i++;
+                        rankingElements.Add(i + ". " + club.Name + " [" + data + "]");
+                    }
                 }
-                else if (TargetOfRanking.Equals(rankingComboboxContent[2])) // Stadiony
+                else if (elem[0].GetType().Equals(typeof(Stadium)))
                 {
-                    strings = stadiumsRanking();
+                    var list = new List<Stadium>();
+                    foreach (var stadium in elem)
+                        list.Add(stadium);
+
+                    var i = 0;
+                    foreach (var stadium in list)
+                    {
+                        string data = "---";
+
+                        if (TypeOfRanking.Equals("capacity"))
+                            data = stadium.Capacity.ToString();
+                        else if (TypeOfRanking.Equals("openDate"))
+                            data = stadium.OpenYear.ToString() + "r.";
+
+                        i++;
+                        rankingElements.Add(i + ". " + stadium.Name + " [" + data + "]");
+                    }
                 }
             }
 
-            return strings;
-        }
-
-        private List<string> leaguesRanking()
-        {
-            List<string> strings = new List<string>();
-
-            return strings;
-        }
-
-        private List<string> clubsRanking()
-        {
-            List<string> strings = new List<string>();
-            List<Club> clubs = new List<Club>();
-
-            clubs = model.DownloadSortedClubsBy(TypeOfRanking);
-
-            var i = 0;
-            foreach (Club club in clubs)
-            {
-                if (i == 10)
-                    break;
-                if (ActualLeague != null)
-                {
-                    if (club.LeagueName.Equals(ActualLeague.Name))
-                        strings.Add((i + 1) + ". " + club.Name);
-                    i++;
-                }
-                else
-                {
-                    strings.Add((i + 1) + ". " + club.Name);
-                    i++;
-                }
-            }
-                
-            return strings;
-        }
-
-        private List<string> stadiumsRanking()
-        {
-            List<string> strings = new List<string>();
-
-            return strings;
+            return rankingElements;
         }
         #endregion
 
@@ -326,14 +374,17 @@ namespace MVVM_Football_Informant.ViewModel
                         arg => {
                             FederationComboboxIsEnable = true;
 
-                            ActualFederation = null;
-                            ActualLeague = null;
+                            if (TargetOfRanking != null)
+                            {
+                                ListRanking = rankingElements();
+                            }
+                            else ListRanking = null;
 
-                            LeagueComboboxIsEnable = false;
-
-                            ListRanking = null;
-
-                            ListRanking = reflashRanking();
+                            if (TargetOfRanking.Equals("leagues"))
+                            {
+                                ActualFederation = null;
+                                ActualLeague = null;
+                            }
                         },
                         arg => true
                         );
@@ -351,19 +402,20 @@ namespace MVVM_Football_Informant.ViewModel
                     _loadLeaguesFromFederation = new RelayCommand(
                         arg => {
                             Leagues = model.Leagues;
-                            if (ActualFederation != null)
+
+                            LeagueComboboxIsEnable = true;
+
+                            ActualLeague = null;
+                            whereType = null;
+
+                            if (ActualFederation != null && !TargetOfRanking.Equals("stadiums"))
                             {
                                 Leagues = loadLeaguesFromFederation();
 
-                                ActualLeague = null;
+                                whereType = ActualFederation.Name;
+
+                                ListRanking = rankingElements();
                             }
-
-                            ActualLeague = null;
-
-                            LeagueComboboxIsEnable = true;
-                            ClubComboboxIsEnable = false;
-
-                            ListRanking = reflashRanking();
                         },
                         arg => true
                         );
@@ -381,12 +433,16 @@ namespace MVVM_Football_Informant.ViewModel
                     _loadClubsFromLeague = new RelayCommand(
                         arg => {
                             Clubs = model.Clubs;
-                            if (ActualLeague != null)
-                            {
-                                ListRanking = reflashRanking();
-                            }
 
                             ClubComboboxIsEnable = true;
+
+                            whereType = null;
+
+                            if (ActualLeague != null)
+                            {
+                                whereType = ActualLeague.Name;
+                                ListRanking = rankingElements();
+                            }
                         },
                         arg => true
                         );
@@ -403,26 +459,42 @@ namespace MVVM_Football_Informant.ViewModel
                 if (_loadTypesComboBox == null)
                     _loadTypesComboBox = new RelayCommand(
                         arg => {
-                                TypeComboboxIsEnable = true;
+                            //MessageBox.Show(TypeOfRanking);
+                            TypeComboboxIsEnable = true;
 
-                                if (TargetOfRanking.Equals(RankingComboboxContent[0]))
-                                {
-                                    TypeComboboxContent = typeToLeagues;
+                            ListRanking = null;
+                            TypeOfRanking = null;
+                            ActualFederation = null;
+                            ActualLeague = null;
 
-                                    LeaguesComboboxVisibility = Visibility.Hidden;
-                                }
-                                else if (TargetOfRanking.Equals(RankingComboboxContent[1]))
-                                {
-                                    TypeComboboxContent = typeToClubs;
+                            FederationComboboxIsEnable = false;
+                            LeagueComboboxIsEnable = false;
 
-                                    LeaguesComboboxVisibility = Visibility.Visible;
-                                }
-                                else if (TargetOfRanking.Equals(RankingComboboxContent[2]))
-                                {
-                                    TypeComboboxContent = typeToStadiums;
+                            if (TargetOfRanking.Equals("leagues"))
+                            {
+                                TypeComboboxContent = typeToLeagues;
 
-                                    LeaguesComboboxVisibility = Visibility.Visible;
-                                }
+                                FederationComboboxVisibility = Visibility.Visible;
+
+                                LeaguesComboboxVisibility = Visibility.Hidden;
+                            }
+                            else if (TargetOfRanking.Equals("clubs"))
+                            {
+                                TypeComboboxContent = typeToClubs;
+
+                                FederationComboboxVisibility = Visibility.Visible;
+
+                                LeaguesComboboxVisibility = Visibility.Visible;
+                            }
+                            else if (TargetOfRanking.Equals("stadiums"))
+                            {
+                                TypeComboboxContent = typeToStadiums;
+
+                                FederationComboboxVisibility = Visibility.Hidden;
+
+                                LeaguesComboboxVisibility = Visibility.Hidden;
+                            }
+
                         },
                         arg => true
                         );

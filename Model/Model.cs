@@ -53,9 +53,9 @@ namespace MVVM_Football_Informant.Model
                 Workers.Add(w);
         }
 
-        public List<Club> DownloadSortedClubsBy(string rankingType)
+        public List<dynamic> DownloadSortedRanking(string target, string orderType, string whereType)
         {
-            return ClubsRepository.DownloadSortedClubsBy(rankingType);
+            return RankingsRepository.DownloadToRanking(target, orderType, whereType);
         }
     }
 }
