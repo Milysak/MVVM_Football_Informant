@@ -10,9 +10,7 @@ using System.Collections.ObjectModel;
 namespace MVVM_Football_Informant.ViewModel
 {
     using MVVM_Football_Informant.Model;
-    using MVVM_Football_Informant.DAL;
     using BaseClass;
-    using Views;
     using DAL.Entities;
 
     class ClubsViewModel : ViewModelBase

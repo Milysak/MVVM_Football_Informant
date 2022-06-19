@@ -129,6 +129,7 @@
     <Compile Include="ViewModel\BaseClasses\RelayCommand.cs" />
     <Compile Include="ViewModel\BaseClasses\ViewModelBase.cs" />
     <Compile Include="ViewModel\ClubsViewModel.cs" />
+    <Compile Include="ViewModel\GameViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\menuPanelViewModel.cs" />
     <Compile Include="ViewModel\RankingsViewModel.cs" />
@@ -140,6 +141,9 @@
     </Compile>
     <Compile Include="Views\Games.xaml.cs">
       <DependentUpon>Games.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GamesWorked.xaml.cs">
+      <DependentUpon>GamesWorked.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
@@ -175,6 +179,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Games.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GamesWorked.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

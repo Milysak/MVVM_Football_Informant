@@ -20,6 +20,7 @@ namespace MVVM_Football_Informant.ViewModel
         public menuPanelViewModel menuPanelVM { set; get; }
         public ClubsViewModel ClubsVM { set; get; }
         public RankingsViewModel RankingsVM { set; get; }
+        public GameViewModel GameVM { set; get; }
 
         public MainViewModel()
         {
@@ -31,6 +32,7 @@ namespace MVVM_Football_Informant.ViewModel
             menuPanelVM = new menuPanelViewModel(model);
             ClubsVM = new ClubsViewModel(model);
             RankingsVM = new RankingsViewModel(model);
+            GameVM = new GameViewModel(model);
         }
     }
 }

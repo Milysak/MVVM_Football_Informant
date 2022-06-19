@@ -12,9 +12,14 @@
     <UserControl.Resources>
         <vm:MainViewModel x:Key="mainVM"/>
     </UserControl.Resources>
-    
+
     <Grid DataContext="{StaticResource mainVM}"
         Margin="10,0,10,10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
         <Button
             Content="GAMES"
             IsEnabled="false"
@@ -32,10 +37,10 @@
                    Margin="50,0,0,0"
                    Foreground="White"
                    TextWrapping="WrapWithOverflow"
-                   Padding="20,20,20,0"
+                   Padding="20,15,20,0"
                    TextAlignment="Center"
                    FontFamily="Agency FB"
-                   FontSize="14">
+                   FontSize="13.5">
             Dwie damulki z Koziej Wólki
 Kupowały w sklepie kulki,
 
@@ -84,5 +89,125 @@ Przez miasto, a potem dalej,
 Aż je pod koniec zabawy
 Doturlali do Warszawy.
         </TextBlock>
+
+        <Grid
+            Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Text="Typ:"
+                        Foreground="White"
+                        VerticalAlignment="Bottom"
+                        Margin="5,0"/>
+                    <ComboBox
+                        Grid.Row="1"
+                        Margin="5,0"
+                        Height="35"
+                        VerticalAlignment="Top"/>
+                </Grid>
+            </Grid>
+
+            <Grid
+                Grid.Row="0"
+                Grid.Column="3"
+                Grid.ColumnSpan="3">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Text="Federacja:"
+                        Foreground="White"
+                        VerticalAlignment="Bottom"
+                        Margin="5,0"/>
+                    <ComboBox
+                        Grid.Row="1"
+                        Margin="5,0"
+                        Height="35"
+                        VerticalAlignment="Top"
+                        Visibility="{Binding GameVM.}"/>
+                </Grid>
+            </Grid>
+
+            <Grid
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="3">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Text="Rundy:"
+                        Foreground="White"
+                        VerticalAlignment="Bottom"
+                        Margin="5,0"/>
+
+                    <DockPanel VerticalAlignment="Top" 
+                               Margin="5,0,5,0"
+                               Grid.Row="1">
+                        <TextBox Text="{Binding ElementName=slValue, Path=Value, UpdateSourceTrigger=PropertyChanged}"
+                                 DockPanel.Dock="Right"
+                                 TextAlignment="Left"
+                                 VerticalAlignment="Top"
+                                 VerticalContentAlignment="Top"
+                                 FontSize="25"
+                                 Width="40"
+                                 Height="30"
+                                 Margin="9,0,0,0"
+                                 Background="Transparent"
+                                 Foreground="White"
+                                 BorderThickness="0"
+                                 IsHitTestVisible="False"/>
+                        <Slider
+                            Minimum="2"
+                            Maximum="10"
+                            Margin="0,5,0,0"
+                            TickPlacement="BottomRight" 
+                            TickFrequency="1"
+                            SmallChange="1"
+                            IsSnapToTickEnabled="True" 
+                            Name="slValue" />
+                    </DockPanel>
+                </Grid>
+            </Grid>
+
+            <Button
+                Grid.Column="6"
+                Grid.Row="2"
+                Content="START">
+                
+            </Button>
+        </Grid>
     </Grid>
 </UserControl>
