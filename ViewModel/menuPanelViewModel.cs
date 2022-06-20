@@ -9,7 +9,6 @@ using System.Windows;
 namespace MVVM_Football_Informant.ViewModel
 {
     using MVVM_Football_Informant.Model;
-    using MVVM_Football_Informant.DAL;
     using BaseClass;
 
     class menuPanelViewModel : ViewModelBase

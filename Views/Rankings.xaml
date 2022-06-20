@@ -29,7 +29,7 @@
         </Grid.RowDefinitions>
 
         <Button
-            Content="RANKINGS"
+            Content="RANKINGI"
             IsEnabled="false"
             Height="60"
             Width="120"

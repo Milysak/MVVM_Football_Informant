@@ -28,7 +28,7 @@
         </Grid.RowDefinitions>
 
         <Button
-            Content="CLUBS"
+            Content="KLUBY"
             IsEnabled="false"
             Height="60"
             Width="120"
