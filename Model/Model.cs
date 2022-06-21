@@ -19,16 +19,6 @@ namespace MVVM_Football_Informant.Model
         public ObservableCollection<Stadium> Stadiums { get; set; } = new ObservableCollection<Stadium>();
         public ObservableCollection<Worker> Workers { get; set; } = new ObservableCollection<Worker>();
 
-        // Stan Ranking
-        public ObservableCollection<Club> ClubsSortedByTrophies { get; set; } = new ObservableCollection<Club>();
-        public ObservableCollection<Club> ClubsSortedByTeamvalue { get; set; } = new ObservableCollection<Club>();
-        public ObservableCollection<Club> ClubsSortedByAge { get; set; } = new ObservableCollection<Club>();
-
-        public ObservableCollection<League> LeaguesSortedByPositionInRanking { get; set; } = new ObservableCollection<League>();
-
-        public ObservableCollection<Stadium> StadiumsSortedByCapacity { get; set; } = new ObservableCollection<Stadium>();
-        public ObservableCollection<Stadium> StadiumsSortedByAge { get; set; } = new ObservableCollection<Stadium>();
-
         public Model()
         {
             // Pobranie danych z bazy do kolekcji

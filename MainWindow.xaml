@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVM_Football_Informant.Views"
         mc:Ignorable="d"
-        Background="#100C08"
+        Background="#FF191919"
         ResizeMode="NoResize"
         FontFamily="Agency FB"
         FontSize="17"
@@ -16,7 +16,7 @@
         <vm:MainViewModel x:Key="mainVM"/>
     </Window.Resources>
 
-    <Grid DataContext="{DynamicResource mainVM}">
+    <Grid DataContext="{StaticResource mainVM}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>

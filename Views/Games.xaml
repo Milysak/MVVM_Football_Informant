@@ -237,12 +237,14 @@
             Grid.ColumnSpan="2"
             Grid.RowSpan="2">
 
-                <Rectangle
-                    Margin="10">
-                    <Rectangle.Fill>
-                        <ImageBrush ImageSource="C:\Users\milos\source\repos\MVVM_Football_Informant\Images\Icons\herb.png" Stretch="UniformToFill"/>
-                    </Rectangle.Fill>
-                </Rectangle>
+                <StackPanel
+                    VerticalAlignment="Center">
+                    <Image Margin="10">
+                        <Image.Source>
+                            <BitmapImage UriSource="\Images\Icons\herb.png"/>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
             </Grid>
 
             <Grid
@@ -251,12 +253,14 @@
             Grid.ColumnSpan="2"
             Grid.RowSpan="2">
 
-                <Rectangle
-                    Margin="10">
-                    <Rectangle.Fill>
-                        <ImageBrush ImageSource="C:\Users\milos\source\repos\MVVM_Football_Informant\Images\Icons\herb.png" Stretch="UniformToFill"/>
-                    </Rectangle.Fill>
-                </Rectangle>
+                <StackPanel
+                    VerticalAlignment="Center">
+                    <Image Margin="10">
+                        <Image.Source>
+                            <BitmapImage UriSource="\Images\Icons\herb.png"/>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
             </Grid>
 
             <TextBlock 

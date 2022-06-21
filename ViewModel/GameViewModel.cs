@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
-using System.Windows.Threading;
 
 namespace MVVM_Football_Informant.ViewModel
 {
     using MVVM_Football_Informant.Model;
-    using MVVM_Football_Informant.DAL;
     using BaseClass;
-    using Views;
     using DAL.Entities;
 
     class GameViewModel : ViewModelBase
@@ -46,11 +43,6 @@ namespace MVVM_Football_Informant.ViewModel
         private ObservableCollection<Club> clubs = null;
         private ObservableCollection<Stadium> stadiums = null;
 
-        // Do wyświetlania czasu oraz obliczania go:
-        private DispatcherTimer timer = new DispatcherTimer();
-        private DateTime timerStart = new DateTime();
-        private TimeSpan timerOF = new TimeSpan();
-
         Random rnd = new Random();
 
         private List<dynamic> pairsToQuiz = new List<dynamic>();
@@ -80,8 +72,6 @@ namespace MVVM_Football_Informant.ViewModel
             typesToClubs.Add("Wartość");
 
             typesToStadiums.Add("Pojemność");
-
-            timer.Interval = TimeSpan.FromSeconds(1);
         }
         #endregion
 
@@ -291,8 +281,6 @@ namespace MVVM_Football_Informant.ViewModel
             DecisionElement3 = null;
             NumberOfCorrectAnswer = 0;
 
-            var numberOfRound = 0;
-
             var pairs = new List<dynamic>();
 
             if (ActualTarget.Equals("Kluby"))
@@ -314,41 +302,32 @@ namespace MVVM_Football_Informant.ViewModel
                 }
             }
 
-            while (numberOfRound < NumberOfRounds * 2 - 1)
+            while (pairs.Count < NumberOfRounds * 2)
             {
                 if (ActualTarget.Equals("Kluby"))
                 {
-                    for(int i = 0; i < 2; i++)
+                    var elem1 = rnd.Next(clubs.Count - 1);
+                    if (pairs.IndexOf(clubs[elem1]) == -1)
                     {
-                        var elem1 = rnd.Next(clubs.Count);
-                        if (pairs.IndexOf(clubs[elem1]) == -1)
-                        {
-                            pairs.Add(clubs[elem1]);
-                            numberOfRound += 1;
-                        }
+                        pairs.Add(clubs[elem1]);
                     }
+
                 }
                 else if (ActualTarget.Equals("Stadiony"))
                 {
-                    for (int i = 0; i < 2; i++)
+                    var elem1 = rnd.Next(stadiums.Count - 1);
+                    if (pairs.IndexOf(stadiums[elem1]) == -1)
                     {
-                        var elem1 = rnd.Next(stadiums.Count);
-                        if (pairs.IndexOf(stadiums[elem1]) == -1)
-                        {
-                            pairs.Add(stadiums[elem1]);
-                            numberOfRound += 1;
-                        }
+                        pairs.Add(stadiums[elem1]);
                     }
                 }
             }
 
-            //MessageBox.Show(pairs.Count.ToString());
             return pairs;
         }
 
         public void loadNextPair()
         {
-            //MessageBox.Show(roundNumber.ToString() + "/" + NumberOfRounds.ToString() + "//" + (NumberOfRounds * 2).ToString());
             if (RoundNumber >= NumberOfRounds)
             {
                 endGame = true;
@@ -419,8 +398,6 @@ namespace MVVM_Football_Informant.ViewModel
                     {
                         NumberOfCorrectAnswer += 1;
                     }
-                    //MessageBox.Show(club1.Name + " - " + firstToCompare + " | " + club2.Name + " - " + secondToCompare + " -> " + FinalDecisionElement);
-                    //MessageBox.Show(NumberOfCorrectAnswer.ToString());
                 }
                 else if (ActualTarget.Equals("Stadiony"))
                 {

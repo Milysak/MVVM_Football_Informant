@@ -202,17 +202,21 @@
                         <ColumnDefinition Width="3*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Rectangle
-                        Margin="0,0,5,5">
-                        <Rectangle.Fill>
-                            <ImageBrush Stretch="UniformToFill" TileMode="None" ImageSource="C:\Users\milos\source\repos\MVVM_Football_Informant\Images\Icons\herb.png"/>
-                        </Rectangle.Fill>
-                    </Rectangle>
+                    <StackPanel
+                        Name="stackPanel"
+                        VerticalAlignment="Center">
+                        <Image 
+                            Height="95">
+                            <Image.Source>
+                                <BitmapImage UriSource="\Images\Icons\herb.png"/>
+                            </Image.Source>
+                        </Image>
+                    </StackPanel>
 
                     <Grid
                         Grid.Column="1">
                         <Grid.RowDefinitions>
-                            <RowDefinition/>
+                            <RowDefinition Height="36.75"/>
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
