@@ -2,12 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style TargetType="TextBlock" x:Key="opacityTextBlock">
-        <Setter Property="Padding" Value="2,0,0,0"/>
         <Setter Property="Background">
             <Setter.Value>
-                <SolidColorBrush Color="Gray" Opacity="0.05">
-
-                </SolidColorBrush>
+                <SolidColorBrush Color="Gray" Opacity="0.05"/>
             </Setter.Value>
         </Setter>
     </Style>
@@ -24,7 +21,7 @@
             </Setter.Value>
         </Setter>
         <Setter Property="Foreground" Value="White"/>
-        <Setter Property="FontFamily" Value="Agency FB"/>
+        <Setter Property="FontFamily" Value="Bahnschrift Light Condensed"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Template">

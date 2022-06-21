@@ -63,6 +63,7 @@ namespace MVVM_Football_Informant.ViewModel
         private int numberOfCorrectAnswer = 0;
 
         private bool endGame = false;
+        private string gameQuestion = null;
         #endregion
 
         #region Constructors
@@ -250,7 +251,6 @@ namespace MVVM_Football_Informant.ViewModel
             }
         }
 
-
         public int NumberOfCorrectAnswer
         {
             get { return numberOfCorrectAnswer; }
@@ -260,23 +260,61 @@ namespace MVVM_Football_Informant.ViewModel
                 onPropertyChanged(nameof(NumberOfCorrectAnswer));
             }
         }
+
+        public int RoundNumber
+        {
+            get { return roundNumber; }
+            set
+            {
+                roundNumber = value;
+                onPropertyChanged(nameof(RoundNumber));
+            }
+        }
+
+        public string GameQuestion
+        {
+            get { return gameQuestion; }
+            set
+            {
+                gameQuestion = value;
+                onPropertyChanged(nameof(GameQuestion));
+            }
+        }
         #endregion
 
         #region Methods
         public List<dynamic> makeQuiz()
         {
             endGame = false;
-            roundNumber = 0;
+            RoundNumber = 0;
             DecisionElement1 = null;
             DecisionElement3 = null;
             NumberOfCorrectAnswer = 0;
 
             var numberOfRound = 0;
-            numberOfCorrectAnswer = 0;
 
             var pairs = new List<dynamic>();
 
-            while (numberOfRound < NumberOfRounds)
+            if (ActualTarget.Equals("Kluby"))
+            {
+                if (ActualType.Equals("Trofea"))
+                {
+                    GameQuestion = "Klub, który ma więcej trofeów!";
+                }
+                else if (ActualType.Equals("Wartość"))
+                {
+                    GameQuestion = "Drużynę, który ma większą wartość!";
+                }
+            }
+            else if (ActualTarget.Equals("Stadiony"))
+            {
+                if (ActualType.Equals("Pojemność"))
+                {
+                    GameQuestion = "Stadion, o większej pojemności!";
+                }
+            }
+
+            while (numberOfRound < NumberOfRounds * 2 - 1)
             {
                 if (ActualTarget.Equals("Kluby"))
                 {
@@ -286,8 +324,9 @@ namespace MVVM_Football_Informant.ViewModel
                         if (pairs.IndexOf(clubs[elem1]) == -1)
                         {
                             pairs.Add(clubs[elem1]);
+                            numberOfRound += 1;
                         }
-                    }    
+                    }
                 }
                 else if (ActualTarget.Equals("Stadiony"))
                 {
@@ -297,20 +336,20 @@ namespace MVVM_Football_Informant.ViewModel
                         if (pairs.IndexOf(stadiums[elem1]) == -1)
                         {
                             pairs.Add(stadiums[elem1]);
+                            numberOfRound += 1;
                         }
                     }
                 }
-
-                numberOfRound += 1;
             }
 
+            //MessageBox.Show(pairs.Count.ToString());
             return pairs;
         }
 
         public void loadNextPair()
         {
-            MessageBox.Show(roundNumber.ToString() + "/" + NumberOfRounds.ToString() + "//" + ((NumberOfRounds * 2) - 1).ToString());
-            if (roundNumber >= (NumberOfRounds * 2))
+            //MessageBox.Show(roundNumber.ToString() + "/" + NumberOfRounds.ToString() + "//" + (NumberOfRounds * 2).ToString());
+            if (RoundNumber >= NumberOfRounds)
             {
                 endGame = true;
             }
@@ -319,18 +358,18 @@ namespace MVVM_Football_Informant.ViewModel
             { 
                 if (ActualTarget.Equals("Kluby"))
                 {
-                    Club club = pairsToQuiz[roundNumber];
+                    Club club = pairsToQuiz[RoundNumber * 2];
                     DecisionElement1 = club.Name;
 
-                    club = pairsToQuiz[roundNumber + 1];
+                    club = pairsToQuiz[RoundNumber * 2 + 1];
                     DecisionElement3 = club.Name;
                 }
                 else if (ActualTarget.Equals("Stadiony"))
                 {
-                    Stadium stadium = pairsToQuiz[roundNumber];
+                    Stadium stadium = pairsToQuiz[RoundNumber * 2];
                     DecisionElement1 = stadium.Name;
 
-                    stadium = pairsToQuiz[roundNumber + 1];
+                    stadium = pairsToQuiz[RoundNumber * 2 + 1];
                     DecisionElement3 = stadium.Name;
                 }
             }
@@ -354,8 +393,8 @@ namespace MVVM_Football_Informant.ViewModel
 
                 if (ActualTarget.Equals("Kluby"))
                 {
-                    Club club1 = pairsToQuiz[roundNumber];
-                    Club club2 = pairsToQuiz[roundNumber + 1];
+                    Club club1 = pairsToQuiz[RoundNumber * 2];
+                    Club club2 = pairsToQuiz[RoundNumber * 2 + 1];
 
                     if (ActualType.Equals("Trofea"))
                     {
@@ -385,8 +424,8 @@ namespace MVVM_Football_Informant.ViewModel
                 }
                 else if (ActualTarget.Equals("Stadiony"))
                 {
-                    Stadium stadium1 = pairsToQuiz[roundNumber];
-                    Stadium stadium2 = pairsToQuiz[roundNumber + 1];
+                    Stadium stadium1 = pairsToQuiz[RoundNumber * 2];
+                    Stadium stadium2 = pairsToQuiz[RoundNumber * 2 + 1];
 
                     if (ActualType.Equals("Pojemność"))
                     {
@@ -408,7 +447,7 @@ namespace MVVM_Football_Informant.ViewModel
                     }
                 }
 
-                roundNumber += 2;
+                RoundNumber += 1;
             }
         }
 

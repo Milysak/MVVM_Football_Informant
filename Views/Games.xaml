@@ -7,7 +7,8 @@
              mc:Ignorable="d"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:vm="clr-namespace:MVVM_Football_Informant.ViewModel"
-             d:DesignHeight="500" d:DesignWidth="700">
+             d:DesignHeight="500" d:DesignWidth="700"
+             FontFamily="Bahnschrift Light Condensed">
 
     <UserControl.Resources>
         <vm:MainViewModel x:Key="mainVM"/>
@@ -32,7 +33,7 @@
             Margin="0,0,30,0"/>
 
             <TextBlock Style="{StaticResource opacityTextBlock}"
-                   Height="190"
+                   Height="180"
                    Width="450"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
@@ -41,8 +42,7 @@
                    TextWrapping="WrapWithOverflow"
                    Padding="20,20,20,20"
                    TextAlignment="Center"
-                   FontFamily="Agency FB"
-                   FontSize="18">
+                   FontSize="17">
                 Traciłeś do zakładki "Gry",
                 gdzie w banalnie prosty sposób
                 możesz sprawdzić swoją piłkarską wiedzę z zakresu
@@ -219,6 +219,19 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
+            <TextBlock 
+                    Style="{StaticResource opacityTextBlock}"
+                FontSize="20"
+                Grid.Row="0"
+                Grid.Column="1"
+                Grid.ColumnSpan="5"
+                Margin="10,0,10,0"
+                TextAlignment="Center"
+                Foreground="White"
+                Text="{Binding GameVM.GameQuestion, 
+                 StringFormat='Zaznacz: {0}'}"
+                VerticalAlignment="Bottom"/>
+
             <Grid
             Grid.Row="1"
             Grid.Column="1"
@@ -247,8 +260,26 @@
                 </Rectangle>
             </Grid>
 
+            <TextBlock 
+                    Style="{StaticResource opacityTextBlock}"
+                Grid.Row="2"
+                Grid.Column="3"
+                TextAlignment="Center"
+                Foreground="White"
+                Height="25"
+                FontSize="17"
+                VerticalAlignment="Bottom">
+                <TextBlock.Text>
+                    <MultiBinding StringFormat="Runda: {0}/{1}">
+                        <Binding Path="GameVM.RoundNumber"/>
+                        <Binding Path="GameVM.NumberOfRounds"/>
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
+
             <Button
                 Name="Decision1"
+                FontSize="15"
             Grid.Column="1"
             Grid.ColumnSpan="2"
             Grid.Row="3"
@@ -282,6 +313,7 @@
 
             <Button
                 Name="Decision3"
+                FontSize="15"
             Grid.Column="4"
             Grid.ColumnSpan="2"
             Grid.Row="3"
@@ -303,7 +335,6 @@
                 Grid.Column="2"
                 Grid.ColumnSpan="3"
                 TextAlignment="Center"
-                FontFamily="Agency FB"
                 Foreground="White"
                 Text="{Binding GameVM.FinalDecisionElement, 
                  StringFormat='Twój wybór: {0}'}"
@@ -352,9 +383,9 @@
                 Grid.ColumnSpan="3"
                 Text="KONIEC!"
                 Foreground="White"
-                FontSize="80"
-                FontFamily="Agency FB"
-                TextAlignment="Center"/>
+                FontSize="65"
+                TextAlignment="Center"
+                VerticalAlignment="Center"/>
 
             <TextBlock 
                     Style="{StaticResource opacityTextBlock}"
@@ -362,13 +393,17 @@
                 Grid.Column="2"
                 Grid.ColumnSpan="3"
                 TextAlignment="Center"
-                FontFamily="Agency FB"
                 Foreground="White"
-                Text="{Binding GameVM.NumberOfCorrectAnswer, 
-                 StringFormat='Zdobyłeś: {0} punkty/punktów'}"
-                Height="35"
-                FontSize="25"
-                VerticalAlignment="Bottom"/>
+                Height="25"
+                FontSize="20"
+                VerticalAlignment="Center">
+                <TextBlock.Text>
+                    <MultiBinding StringFormat="Poprawne: {0}/{1}">
+                        <Binding Path="GameVM.NumberOfCorrectAnswer" />
+                        <Binding Path="GameVM.NumberOfRounds" />
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
 
             <Button
                 Grid.Column="6"

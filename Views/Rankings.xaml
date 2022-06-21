@@ -6,10 +6,10 @@
              xmlns:local="clr-namespace:MVVM_Football_Informant.Views"
              mc:Ignorable="d"
              FontSize="17"
-             FontFamily="Agency FB"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:vm="clr-namespace:MVVM_Football_Informant.ViewModel"
-             d:DesignHeight="500" d:DesignWidth="700">
+             d:DesignHeight="500" d:DesignWidth="700"
+             FontFamily="Bahnschrift Light Condensed">
 
     <UserControl.Resources>
         <vm:MainViewModel x:Key="mainVM"/>

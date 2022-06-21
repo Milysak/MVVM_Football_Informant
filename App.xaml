@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:MVVM_Football_Informant"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary Source="Styles\gradientAnimatedGreenButton.xaml"/>
+        <ResourceDictionary Source="Styles\styles.xaml"/>
     </Application.Resources>
 </Application>
