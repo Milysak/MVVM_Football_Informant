@@ -41,7 +41,6 @@
                    Foreground="White"
                    TextWrapping="WrapWithOverflow"
                    Padding="20,20,20,20"
-                   TextAlignment="Center"
                    FontSize="17">
                 Traciłeś do zakładki "Gry",
                 gdzie w banalnie prosty sposób
