@@ -43,7 +43,7 @@ namespace MVVM_Football_Informant.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("root")]
+        [global::System.Configuration.DefaultSettingValueAttribute("userFootballApp")]
         public string userID {
             get {
                 return ((string)(this["userID"]));
@@ -61,7 +61,7 @@ namespace MVVM_Football_Informant.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Mily12345.")]
+        [global::System.Configuration.DefaultSettingValueAttribute("userhaslo")]
         public string passwd {
             get {
                 return ((string)(this["passwd"]));
