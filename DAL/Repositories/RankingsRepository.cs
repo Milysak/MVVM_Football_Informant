@@ -38,21 +38,22 @@ namespace MVVM_Football_Informant.DAL.Repositories
                     {
                         where = "leagueName = ";
                     }
-                    SELECT_COMMAND = SELECT_TO_RANKING_1 + targetType + SELECT_TO_RANKING_3 + where + "'" + whereType + "'" + " AND " + orderType + " IS NOT NULL " + SELECT_TO_RANKING_2 + orderType;
+                    SELECT_COMMAND = SELECT_TO_RANKING_1 + targetType + SELECT_TO_RANKING_3 + where + "'" + 
+                        whereType + "'" + " AND " + orderType + " IS NOT NULL " + SELECT_TO_RANKING_2 + orderType;
                 }
                 else
                 {
                     SELECT_COMMAND = SELECT_TO_RANKING_1 + targetType + " WHERE " + orderType + " IS NOT NULL " + SELECT_TO_RANKING_2 + orderType;
                 }
                 
-                if (targetType.Equals("stadiums"))
+                if (targetType.Equals("stadiums")) // bo ranking stadionów jest globalny - nie filtrowalny
                 {
                     SELECT_COMMAND = SELECT_TO_RANKING_1 + targetType + SELECT_TO_RANKING_2 + orderType;
                 }
 
                 if (orderType.Equals("teamValue") || orderType.Equals("trophiesNumber") || orderType.Equals("capacity"))
                 {
-                    SELECT_COMMAND += " DESC";
+                    SELECT_COMMAND += " DESC"; // ponieważ zależy na największej wartości, największej ilości trofeów i miejsc na stadionie :)
                 }
 
                 //MessageBox.Show(SELECT_COMMAND);

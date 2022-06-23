@@ -290,15 +290,12 @@ namespace MVVM_Football_Informant.ViewModel
             var rankingElements = new List<string>();
             var elem = new List<dynamic>();
 
-            //MessageBox.Show(TargetOfRanking + " " + TypeOfRanking);
-
             if (TargetOfRanking != null && TypeOfRanking != null)
                 elem = model.DownloadSortedRanking(TargetOfRanking, TypeOfRanking, whereType);
             else return null;
 
             if (elem.Count > 0)
             {
-                //MessageBox.Show(elem[0].GetType().ToString());
                 if (elem[0].GetType().Equals(typeof(League)))
                 {
                     var list = new List<League>();

@@ -12,7 +12,6 @@ namespace MVVM_Football_Informant.DAL.Repositories
     {
         #region Queries
         private const string SELECT_ALL_LEAGUES = "SELECT * FROM leagues ORDER BY country";
-        private const string SELECT_LEAGUES_FROM_FEDERATION = "SELECT * FROM leagues WHERE federationName = ";
         #endregion
 
         #region Methods
@@ -23,27 +22,6 @@ namespace MVVM_Football_Informant.DAL.Repositories
             using (var connection = DBConnection.Instance.Connection)
             {
                 MySqlCommand command = new MySqlCommand(SELECT_ALL_LEAGUES, connection);
-
-                connection.Open();
-
-                var reader = command.ExecuteReader();
-
-                while (reader.Read())
-                    leagues.Add(new League(reader));
-
-                connection.Close();
-            }
-
-            return leagues;
-        }
-
-        public static List<League> DownloadNecessaryLeagues(string FederationName)
-        {
-            var leagues = new List<League>();
-
-            using (var connection = DBConnection.Instance.Connection)
-            {
-                MySqlCommand command = new MySqlCommand($"{SELECT_LEAGUES_FROM_FEDERATION} {FederationName}", connection);
 
                 connection.Open();
 

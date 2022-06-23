@@ -23,12 +23,12 @@ namespace MVVM_Football_Informant.DAL
         }
 
         private MySqlConnection connection;
-        public MySqlConnection Connection => connection;//new MySqlConnection(stringBuilder.ToString());
+        public MySqlConnection Connection => connection;
             
         
         private DBConnection() {
 
-            //stworzenie connection stringa na podstawie danych zapisanych w Settings do których mamy dostęp spoza aplikacji 
+            // stworzenie connection stringa na podstawie danych zapisanych w Settings do których mamy dostęp spoza aplikacji 
             stringBuilder.UserID = MVVM_Football_Informant.Properties.Settings.Default.userID;
             stringBuilder.Server = MVVM_Football_Informant.Properties.Settings.Default.server;
             stringBuilder.Database = MVVM_Football_Informant.Properties.Settings.Default.database;

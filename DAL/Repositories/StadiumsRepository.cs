@@ -12,7 +12,6 @@ namespace MVVM_Football_Informant.DAL.Repositories
     {
         #region Queries
         private const string SELECT_ALL_STADIUMS = "SELECT * FROM stadiums";
-        private const string SELECT_NECESSARY_STADIUM = "SELECT * FROM stadiums where name = ";
         #endregion
 
         #region Methods
@@ -35,26 +34,6 @@ namespace MVVM_Football_Informant.DAL.Repositories
             }
 
             return stadiums;
-        }
-
-        public static Stadium DownloadNecessaryStadium(string StadiumName)
-        {
-            Stadium stadium;
-
-            using (var connection = DBConnection.Instance.Connection)
-            {
-                MySqlCommand command = new MySqlCommand($"{SELECT_NECESSARY_STADIUM} {StadiumName}", connection);
-
-                connection.Open();
-
-                var reader = command.ExecuteReader();
-
-                stadium = new Stadium(reader);
-
-                connection.Close();
-            }
-
-            return stadium;
         }
         #endregion
     }
