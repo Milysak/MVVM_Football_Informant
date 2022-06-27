@@ -128,6 +128,7 @@
     <Compile Include="Model\Model.cs" />
     <Compile Include="ViewModel\BaseClasses\RelayCommand.cs" />
     <Compile Include="ViewModel\BaseClasses\ViewModelBase.cs" />
+    <Compile Include="ViewModel\CareerMainViewModel.cs" />
     <Compile Include="ViewModel\CareerViewModel.cs" />
     <Compile Include="ViewModel\CareerViewModelElements\CareerMarketPlaceViewModel.cs" />
     <Compile Include="ViewModel\CareerViewModelElements\CareerPlaySimulationViewModel.cs" />

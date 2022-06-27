@@ -15,12 +15,6 @@ namespace MVVM_Football_Informant.ViewModel
 
     class CareerViewModel : ViewModelBase
     {
-        public CareerPlaySimulationViewModel CareerPlaySimulationVM { set; get; }
-        public CareerYourProfileViewModel CareerYourProfileVM { set; get; }
-        public CareerClubViewModel CareerClubVM { set; get; }
-        public CareerStandingsViewModel CareerStandingsVM { set; get; }
-        public CareerMarketPlaceViewModel CareerMarketPlaceVM { set; get; }
-
         #region Private Fields
         private Model model = null;
 
@@ -35,12 +29,6 @@ namespace MVVM_Football_Informant.ViewModel
         public CareerViewModel(Model model)
         {
             this.model = model;
-
-            CareerPlaySimulationVM = new CareerPlaySimulationViewModel(model);
-            CareerYourProfileVM = new CareerYourProfileViewModel(model);
-            CareerClubVM = new CareerClubViewModel(model);
-            CareerStandingsVM = new CareerStandingsViewModel(model);
-            CareerMarketPlaceVM = new CareerMarketPlaceViewModel(model);
         }
         #endregion
 
