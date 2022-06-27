@@ -42,6 +42,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
 
             <Button 
@@ -85,9 +86,19 @@
                 </i:Interaction.Triggers>
             </Button>
 
+            <Button x:Name="Career"
+                Content="KARIERA" 
+                Grid.Row="4">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="PreviewMouseLeftButtonUp">
+                        <i:InvokeCommandAction Command="{Binding menuPanelVM.ShowCareerPanel}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+
             <Button x:Name="Quit"
                 Content="WYJDŹ" 
-                Grid.Row="4">
+                Grid.Row="5">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="PreviewMouseLeftButtonUp">
                         <i:InvokeCommandAction Command="{Binding menuPanelVM.ApplicationCloseCommand}"/>
@@ -121,5 +132,11 @@
             Grid.ColumnSpan="7"
             Grid.RowSpan="5"
             Visibility="{Binding menuPanelVM.RankingsPanelVisibility}"/>
+
+        <local:Career
+            Grid.Column="1"
+            Grid.ColumnSpan="7"
+            Grid.RowSpan="5"
+            Visibility="{Binding menuPanelVM.CareerPanelVisibility}"/>
     </Grid>
 </UserControl>

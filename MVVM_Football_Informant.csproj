@@ -128,11 +128,20 @@
     <Compile Include="Model\Model.cs" />
     <Compile Include="ViewModel\BaseClasses\RelayCommand.cs" />
     <Compile Include="ViewModel\BaseClasses\ViewModelBase.cs" />
+    <Compile Include="ViewModel\CareerViewModel.cs" />
+    <Compile Include="ViewModel\CareerViewModelElements\CareerMarketPlaceViewModel.cs" />
+    <Compile Include="ViewModel\CareerViewModelElements\CareerPlaySimulationViewModel.cs" />
+    <Compile Include="ViewModel\CareerViewModelElements\CareerStandingsViewModel .cs" />
+    <Compile Include="ViewModel\CareerViewModelElements\CareerYourProfilViewModel.cs" />
+    <Compile Include="ViewModel\CareerViewModelElements\CareerClubViewModel.cs" />
     <Compile Include="ViewModel\ClubsViewModel.cs" />
     <Compile Include="ViewModel\GameViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\menuPanelViewModel.cs" />
     <Compile Include="ViewModel\RankingsViewModel.cs" />
+    <Compile Include="Views\Career.xaml.cs">
+      <DependentUpon>Career.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Clubs.xaml.cs">
       <DependentUpon>Clubs.xaml</DependentUpon>
     </Compile>
@@ -163,6 +172,10 @@
     <Page Include="Styles\styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Career.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Clubs.xaml">
       <SubType>Designer</SubType>
@@ -215,6 +228,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\Other\" />
+    <Folder Include="Views\CareerViews\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Icons\herb.png" />

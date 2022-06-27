@@ -15,20 +15,17 @@ namespace MVVM_Football_Informant.ViewModel
     {
         #region Składowe prywatne
         private Model model = null;
-        private Visibility menuPanelVisibility;
-        private Visibility clubsPanelVisibility;
-        private Visibility gamesPanelVisibility;
-        private Visibility rankingsPanelVisibility;
+        private Visibility menuPanelVisibility = Visibility.Visible;
+        private Visibility clubsPanelVisibility = Visibility.Hidden;
+        private Visibility gamesPanelVisibility = Visibility.Hidden;
+        private Visibility rankingsPanelVisibility = Visibility.Hidden;
+        private Visibility careerPanelVisibility = Visibility.Hidden;
         #endregion
 
         #region Konstruktory
         public menuPanelViewModel(Model model)
         {
             this.model = model;
-            MenuPanelVisibility = Visibility.Visible;
-            ClubsPanelVisibility = Visibility.Hidden;
-            GamesPanelVisibility = Visibility.Hidden;
-            RankingsPanelVisibility = Visibility.Hidden;
         }
         #endregion
 
@@ -72,6 +69,16 @@ namespace MVVM_Football_Informant.ViewModel
                 onPropertyChanged(nameof(RankingsPanelVisibility));
             }
         }
+
+        public Visibility CareerPanelVisibility
+        {
+            get { return careerPanelVisibility; }
+            set
+            {
+                careerPanelVisibility = value;
+                onPropertyChanged(nameof(CareerPanelVisibility));
+            }  
+        }
         #endregion
 
         #region Methods
@@ -90,6 +97,7 @@ namespace MVVM_Football_Informant.ViewModel
                             ClubsPanelVisibility = Visibility.Hidden;
                             GamesPanelVisibility = Visibility.Hidden;
                             RankingsPanelVisibility = Visibility.Hidden;
+                            CareerPanelVisibility = Visibility.Hidden;
                         },
                         arg => true
                         );
@@ -110,6 +118,7 @@ namespace MVVM_Football_Informant.ViewModel
                             ClubsPanelVisibility = Visibility.Visible;
                             GamesPanelVisibility = Visibility.Hidden;
                             RankingsPanelVisibility = Visibility.Hidden;
+                            CareerPanelVisibility = Visibility.Hidden;
                         },
                         arg => true
                         );
@@ -130,6 +139,7 @@ namespace MVVM_Football_Informant.ViewModel
                             ClubsPanelVisibility = Visibility.Hidden;
                             GamesPanelVisibility = Visibility.Visible;
                             RankingsPanelVisibility = Visibility.Hidden;
+                            CareerPanelVisibility = Visibility.Hidden;
                         },
                         arg => true
                         );
@@ -150,11 +160,33 @@ namespace MVVM_Football_Informant.ViewModel
                             ClubsPanelVisibility = Visibility.Hidden;
                             GamesPanelVisibility = Visibility.Hidden;
                             RankingsPanelVisibility = Visibility.Visible;
+                            CareerPanelVisibility = Visibility.Hidden;
                         },
                         arg => true
                         );
 
                 return _showRankingsPanel;
+            }
+        }
+        
+        private ICommand _showCareerPanel = null;
+        public ICommand ShowCareerPanel
+        {
+            get
+            {
+                if (_showCareerPanel == null)
+                    _showCareerPanel = new RelayCommand(
+                        arg => {
+                            MenuPanelVisibility = Visibility.Hidden;
+                            ClubsPanelVisibility = Visibility.Hidden;
+                            GamesPanelVisibility = Visibility.Hidden;
+                            RankingsPanelVisibility = Visibility.Hidden;
+                            CareerPanelVisibility = Visibility.Visible;
+                        },
+                        arg => true
+                        );
+
+                return _showCareerPanel;
             }
         }
 

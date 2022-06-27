@@ -21,6 +21,7 @@ namespace MVVM_Football_Informant.ViewModel
         public ClubsViewModel ClubsVM { set; get; }
         public RankingsViewModel RankingsVM { set; get; }
         public GameViewModel GameVM { set; get; }
+        public CareerViewModel CareerVM { set; get; }
 
         public MainViewModel()
         {
@@ -33,6 +34,7 @@ namespace MVVM_Football_Informant.ViewModel
             ClubsVM = new ClubsViewModel(model);
             RankingsVM = new RankingsViewModel(model);
             GameVM = new GameViewModel(model);
+            CareerVM = new CareerViewModel(model);
         }
     }
 }
