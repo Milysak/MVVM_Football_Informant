@@ -12,6 +12,9 @@ namespace MVVM_Football_Informant.ViewModel.CareerViewModelElements
 
     class CareerPlaySimulationViewModel : ViewModelBase
     {
+        public CareerPlaySimulationViewModel(Model model)
+        {
 
+        }
     }
 }

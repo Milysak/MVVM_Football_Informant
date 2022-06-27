@@ -132,7 +132,7 @@
     <Compile Include="ViewModel\CareerViewModelElements\CareerMarketPlaceViewModel.cs" />
     <Compile Include="ViewModel\CareerViewModelElements\CareerPlaySimulationViewModel.cs" />
     <Compile Include="ViewModel\CareerViewModelElements\CareerStandingsViewModel .cs" />
-    <Compile Include="ViewModel\CareerViewModelElements\CareerYourProfilViewModel.cs" />
+    <Compile Include="ViewModel\CareerViewModelElements\CareerYourProfileViewModel.cs" />
     <Compile Include="ViewModel\CareerViewModelElements\CareerClubViewModel.cs" />
     <Compile Include="ViewModel\ClubsViewModel.cs" />
     <Compile Include="ViewModel\GameViewModel.cs" />
@@ -141,6 +141,21 @@
     <Compile Include="ViewModel\RankingsViewModel.cs" />
     <Compile Include="Views\Career.xaml.cs">
       <DependentUpon>Career.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CareerViews\CareerClub.xaml.cs">
+      <DependentUpon>CareerClub.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CareerViews\CareerMarketPlace.xaml.cs">
+      <DependentUpon>CareerMarketPlace.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CareerViews\CareerPlaySimulation.xaml.cs">
+      <DependentUpon>CareerPlaySimulation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CareerViews\CareerStandings.xaml.cs">
+      <DependentUpon>CareerStandings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CareerViews\CareerYourProfile.xaml.cs">
+      <DependentUpon>CareerYourProfile.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Clubs.xaml.cs">
       <DependentUpon>Clubs.xaml</DependentUpon>
@@ -174,6 +189,26 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Career.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CareerViews\CareerClub.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CareerViews\CareerMarketPlace.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CareerViews\CareerPlaySimulation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CareerViews\CareerStandings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CareerViews\CareerYourProfile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -228,7 +263,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\Other\" />
-    <Folder Include="Views\CareerViews\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Icons\herb.png" />

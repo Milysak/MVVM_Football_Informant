@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:vm="clr-namespace:MVVM_Football_Informant.ViewModel"
-             xmlns:local="clr-namespace:MVVM_Football_Informant.Views"
+             xmlns:local="clr-namespace:MVVM_Football_Informant.Views.CareerViews"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="700">
     
@@ -39,7 +39,7 @@
             Grid.Column="1">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="PreviewMouseLeftButtonUp">
-                    <i:InvokeCommandAction Command="{}"/>
+                    <i:InvokeCommandAction Command="{Binding CareerVM.ShowCareerClubPanel}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>
@@ -49,7 +49,7 @@
             Grid.Column="2">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="PreviewMouseLeftButtonUp">
-                    <i:InvokeCommandAction Command="{}"/>
+                    <i:InvokeCommandAction Command="{Binding CareerVM.ShowCareerYourProfilePanel}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>
@@ -59,7 +59,7 @@
             Grid.Column="3">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="PreviewMouseLeftButtonUp">
-                    <i:InvokeCommandAction Command="{}"/>
+                    <i:InvokeCommandAction Command="{Binding CareerVM.ShowCareerClubPanel}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>
@@ -69,7 +69,7 @@
             Grid.Column="4">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="PreviewMouseLeftButtonUp">
-                    <i:InvokeCommandAction Command="{}"/>
+                    <i:InvokeCommandAction Command="{Binding CareerVM.ShowCareerStandingsPanel}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>
@@ -79,7 +79,7 @@
             Grid.Column="5">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="PreviewMouseLeftButtonUp">
-                    <i:InvokeCommandAction Command="{}"/>
+                    <i:InvokeCommandAction Command="{Binding CareerVM.ShowCareerMarketPlacePanel}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>
@@ -93,5 +93,40 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>
+
+        <local:CareerClub
+            Grid.Column="0"
+            Grid.ColumnSpan="8"
+            Grid.Row="1"
+            Grid.RowSpan="5"
+            Visibility="{Binding CareerVM.CareerClubVisibility}"/>
+
+        <local:CareerMarketPlace
+            Grid.Column="0"
+            Grid.ColumnSpan="8"
+            Grid.Row="1"
+            Grid.RowSpan="5"
+            Visibility="{Binding CareerVM.CareerMarketPlaceVisibility}"/>
+
+        <local:CareerPlaySimulation
+            Grid.Column="0"
+            Grid.ColumnSpan="8"
+            Grid.Row="1"
+            Grid.RowSpan="5"
+            Visibility="{Binding CareerVM.CareerPlaySimulationVisibility}"/>
+
+        <local:CareerStandings
+            Grid.Column="0"
+            Grid.ColumnSpan="8"
+            Grid.Row="1"
+            Grid.RowSpan="5"
+            Visibility="{Binding CareerVM.CareerStandingsVisibility}"/>
+
+        <local:CareerYourProfile
+            Grid.Column="0"
+            Grid.ColumnSpan="8"
+            Grid.Row="1"
+            Grid.RowSpan="5"
+            Visibility="{Binding CareerVM.CareerYourProfileVisibility}"/>
     </Grid>
 </UserControl>

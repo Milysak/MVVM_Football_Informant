@@ -10,8 +10,11 @@ namespace MVVM_Football_Informant.ViewModel.CareerViewModelElements
     using BaseClass;
     using DAL.Entities;
 
-    class CareerYourProfilViewModel : ViewModelBase
+    class CareerYourProfileViewModel : ViewModelBase
     {
+        public CareerYourProfileViewModel(Model model)
+        {
 
+        }
     }
 }
