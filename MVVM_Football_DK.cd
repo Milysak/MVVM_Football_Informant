@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MVVM_Football_Informant.App">
+    <Position X="11.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="13" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MVVM_Football_Informant.DAL.DBConnection">
+    <Position X="18.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAEAAAABAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>DAL\DBConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.DAL.Entities.Club">
+    <Position X="13" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAIAAAAMAACAAAQAAAAAAAAAAAAAAKAAAAE=</HashCode>
+      <FileName>DAL\Entities\Club.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.DAL.Entities.Federation">
+    <Position X="11.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAQAAAACAAABAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\Entities\Federation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.DAL.Entities.League">
+    <Position X="16.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAwAAAIAAACBAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\Entities\League.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.DAL.Entities.Stadium">
+    <Position X="11.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAEAAAAAAQCAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\Entities\Stadium.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.DAL.Entities.Worker">
+    <Position X="16.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAgEAAAAAAYABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\Entities\Worker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.DAL.Repositories.ClubsRepository">
+    <Position X="16.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\Repositories\ClubsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.DAL.Repositories.FederationsRepository">
+    <Position X="14.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\Repositories\FederationsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.DAL.Repositories.LeaguesRepository">
+    <Position X="18.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\Repositories\LeaguesRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.DAL.Repositories.RankingsRepository">
+    <Position X="13" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAA4AAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\Repositories\RankingsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.DAL.Repositories.StadiumsRepository">
+    <Position X="13" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\Repositories\StadiumsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.DAL.Repositories.WorkersRepository">
+    <Position X="18.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAACAAAAAA=</HashCode>
+      <FileName>DAL\Repositories\WorkersRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.Model.Model">
+    <Position X="18.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAEAAABAAAAAAAAAEAQAAgAAAAAAA=</HashCode>
+      <FileName>Model\Model.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.Properties.Resources">
+    <Position X="16.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.Properties.Settings">
+    <Position X="14.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAABACAAAIAAAAAABAAgAAAAAAAAAAAI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.ViewModel.BaseClass.RelayCommand" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEACAAQAAECAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\BaseClasses\RelayCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MVVM_Football_Informant.ViewModel.BaseClass.ViewModelBase">
+    <Position X="5.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\BaseClasses\ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MVVM_Football_Informant.ViewModel.ClubsViewModel">
+    <Position X="2" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAJAiQAIQAAggJkGEAADpBAACABA4CACQAAiAQAIKAA=</HashCode>
+      <FileName>ViewModel\ClubsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.ViewModel.GameViewModel">
+    <Position X="4.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIFEHAYtmgEOBDBnCIIAQBCAAgEglAJQJD0AEAAZACY=</HashCode>
+      <FileName>ViewModel\GameViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.ViewModel.MainViewModel">
+    <Position X="11.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAYAAA=</HashCode>
+      <FileName>ViewModel\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.ViewModel.menuPanelViewModel">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAJABAAAAARAAAAAGAAABAgAAAAIEAAAABIAIGCIAAA=</HashCode>
+      <FileName>ViewModel\menuPanelViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.ViewModel.RankingsViewModel">
+    <Position X="8.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAJSCAACQAAgkJFEEAIDBJQCGRBAwBIQUAIBAAgJKEA=</HashCode>
+      <FileName>ViewModel\RankingsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVVM_Football_Informant.Views.Clubs" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Clubs.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MVVM_Football_Informant.Views.Games" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Games.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MVVM_Football_Informant.Views.Menu" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Menu.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MVVM_Football_Informant.Views.menuPanel" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\menuPanel.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MVVM_Football_Informant.Views.Rankings" BaseTypeListCollapsed="true">
+    <Position X="13" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Rankings.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
