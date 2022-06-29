@@ -12,7 +12,11 @@
              FontFamily="Bahnschrift Light Condensed"
              FontSize="20">
 
-    <Grid
+    <UserControl.Resources>
+        <vm:CareerMainViewModel x:Key="mainCareerVM"/>
+    </UserControl.Resources>
+    
+    <Grid DataContext="{StaticResource mainCareerVM}"
         Margin="0,10,0,0">
         <Grid.RowDefinitions>
             <RowDefinition/>
