@@ -42,7 +42,6 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
-                <RowDefinition/>
             </Grid.RowDefinitions>
 
             <Button 
@@ -86,6 +85,8 @@
                 </i:Interaction.Triggers>
             </Button>
 
+            <!-- Element wychodzący poza zakres bazy i założeń projektu na programowanie i bazy danych
+            dodanie elementu wymagało by zbyt szerokiej edycji bazy danych
             <Button x:Name="Career"
                 Content="KARIERA" 
                 Grid.Row="4">
@@ -95,10 +96,11 @@
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>
+            -->
 
             <Button x:Name="Quit"
                 Content="WYJDŹ" 
-                Grid.Row="5">
+                Grid.Row="4">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="PreviewMouseLeftButtonUp">
                         <i:InvokeCommandAction Command="{Binding menuPanelVM.ApplicationCloseCommand}"/>
