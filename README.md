@@ -7,11 +7,11 @@ Projekt na studia, w całości napisany w C#. Dane trzymane w dazie SQL - tylko 
 
 ## Zrzuty ekranu
 
-### Zakładka kluby
+### Zakładka KLUBY
 <img src="https://github.com/Milysak/MVVM_Football_Informant/blob/master/KLUBY.png?raw=true" width="512">
 
-### Podgląd kamery
+### Zakładka GRY
 <img src="https://github.com/Milysak/MVVM_Football_Informant/blob/master/GRY.png?raw=true" width="512">
 
-### Plik wynikowy
+### Zakładka RANKINGI
 <img src="https://github.com/Milysak/MVVM_Football_Informant/blob/master/RANKINGI.png?raw=true" width="512">
