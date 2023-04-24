@@ -1,25 +1,17 @@
 # MVVM_Football_Informant
-
-Projekt realizowany na studia - wybieramy interwał, ilość zdjęć, baner (jako tło) oraz filtr. Następnie włączamy i wykonuje się seria zdjęć. Rest API tworzy "taśmę" zdjęć w formacie A4.
-
+Projekt na studia, w całości napisany w C#. Dane trzymane w dazie SQL - tylko czytanie. Aplikacja posiada trzy główne zakładki - kluby, gry i rankingi. Zgromadzone dane z wikipedii za sezon 2021/22 lub w niektórych przypadkach minimalnie starsze.
 
 ## Technologie
-
-- Android (Kotlin),a
-- Rest API -> Flask (Python),
-- CameraX - kamera,
-- ROOM Database - zapisanie ustawień lokalnie,
-- Okhttp - wysyłanie zapytań do Rest API,
-- PIL - nakładanie filtrów w Rest API na zdjęcia.
-
+- C#,
+- SQL database.
 
 ## Zrzuty ekranu
 
-### Ekran ustawień
-<img src="https://github.com/Milysak/Fotobudka/blob/master/Screenshot_2023-02-13-19-50-31-154_com.example.fotobudka.jpg?raw=true" width="256">
+### Zakładka kluby
+<img src="https://github.com/Milysak/MVVM_Football_Informant/blob/master/KLUBY.png?raw=true" width="512">
 
 ### Podgląd kamery
-<img src="https://github.com/Milysak/Fotobudka/blob/master/IMG_20230213_195058.jpg?raw=true" width="256">
+<img src="https://github.com/Milysak/MVVM_Football_Informant/blob/master/GRY.png?raw=true" width="512">
 
 ### Plik wynikowy
-<img src="https://github.com/Milysak/Fotobudka/blob/master/PDF_13-02_18-01-190.jpg?raw=true" width="256">
+<img src="https://github.com/Milysak/MVVM_Football_Informant/blob/master/RANKINGI.png?raw=true" width="512">
